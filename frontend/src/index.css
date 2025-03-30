@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font face declarations for IranSansX */
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Regular.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Regular.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Bold.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Bold.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Medium.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Medium.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Light.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Light.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Black.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Black.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-ExtraBold.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-ExtraBold.woff') format('woff'),
+       url('./assets/fonts/IranSansX-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-DemiBold.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-DemiBold.woff') format('woff'),
+       url('./assets/fonts/IranSansX-DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-Thin.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-Thin.woff') format('woff'),
+       url('./assets/fonts/IranSansX-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IranSansX';
+  src: url('./assets/fonts/IranSansX-UltraLight.woff2') format('woff2'),
+       url('./assets/fonts/IranSansX-UltraLight.woff') format('woff'),
+       url('./assets/fonts/IranSansX-UltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom styles should come after Tailwind directives */
+:root {
+  font-family: 'IranSansX', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Comment out or remove CSS rules that might override Tailwind */
+/* For example, these general element styles: */
+/*
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  direction: rtl;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+*/
+
+/* Keep these styles */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  direction: rtl;
+  font-family: 'IranSansX', sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* RTL-specific styles */
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom styles for autofill inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #1F2937 !important;
+  caret-color: #4F46E5 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Force scrollbar on the right side */
+html {
+  direction: ltr;
+}
+
+body {
+  direction: rtl;
+}
+
+.scrollbar-right {
+  direction: ltr;
+}
+.scrollbar-right > * {
+  direction: rtl;
+}
