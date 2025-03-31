@@ -4,7 +4,6 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import { chatService, extractErrorMessage } from '../services/api';
 import { Chat, ChatMessage as ChatMessageType } from '../types';
-import ChatList from '../components/chat/ChatList';
 import ChatMessageComponent from '../components/chat/ChatMessage';
 import MessageInput from '../components/chat/MessageInput';
 import UserDropdown from '../components/chat/UserDropdown';
@@ -14,7 +13,7 @@ import loadingGif from '../assets/LoadingAnimation.gif';
 const ChatPage: React.FC = () => {
   const { user, logout, updateUserUsage } = useAuth();
   const navigate = useNavigate();
-  const [chats, setChats] = useState<Chat[]>([]);
+  const [_chats, setChats] = useState<Chat[]>([]);
   const [selectedChat, setSelectedChat] = useState<Chat | null>(null);
   const [messages, setMessages] = useState<ChatMessageType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -69,11 +68,6 @@ const ChatPage: React.FC = () => {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleChatSelect = (chat: Chat) => {
-    setSelectedChat(chat);
-    setMessages(chat.messages);
   };
 
   const handleMessageSent = async (message: string) => {
@@ -202,8 +196,8 @@ const ChatPage: React.FC = () => {
 
   return (
     <div className="h-screen flex flex-col overflow-hidden">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-2 sm:px-4 py-2 sm:py-3 w-full">
+      {/* Fixed Header */}
+      <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 px-2 sm:px-4 py-2 sm:py-3 w-full z-10 shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-1 sm:space-x-2 space-x-reverse">
             <img src={logo} alt="خوبات" className="h-8 sm:h-10" />
@@ -214,11 +208,11 @@ const ChatPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content - Messages area with scrollbar at right screen edge */}
-      <div className="flex-1 overflow-y-auto scrollbar-right" onScroll={handleScroll} ref={messagesContainerRef}>
+      {/* Main Content - with padding to account for fixed header */}
+      <div className="flex-1 overflow-y-auto scrollbar-right pt-16" onScroll={handleScroll} ref={messagesContainerRef}>
         <div className="max-w-[780px] mx-auto pb-20">
           {messages.length === 0 ? (
-            <div className="flex-1 h-[calc(100vh-160px)] flex items-center justify-center text-gray-500 text-lg sm:text-xl">
+            <div className="flex-1 h-[calc(100vh-180px)] flex items-center justify-center text-gray-500 text-lg sm:text-xl">
               <div className="text-center px-2">
                 <p className="font-extrabold text-xl sm:text-2xl">سلام {user?.firstName} 👋</p>
                 <p className="mt-2">چه کمکی از دستم برمیاد؟</p>
@@ -237,7 +231,7 @@ const ChatPage: React.FC = () => {
               {/* Typing indicator */}
               {isTyping && (
                 <div className="flex justify-start mb-4">
-                  <div className="max-w-[85%] sm:max-w-[70%] rounded-lg px-3 py-2 bg-gray-200 text-gray-800 rounded-tr-none">
+                  <div className="max-w-[85%] sm:max-w-[70%] rounded-tr-lg rounded-tl-lg rounded-bl-lg px-3 py-2 bg-gray-200 text-gray-800">
                     <img src={loadingGif} alt="در حال نوشتن" className="h-5 sm:h-6" />
                   </div>
                 </div>
@@ -252,7 +246,7 @@ const ChatPage: React.FC = () => {
         {showScrollButton && (
           <button 
             onClick={scrollToBottom}
-            className="fixed bottom-24 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-indigo-600 text-white rounded-full w-10 h-10 shadow-lg hover:bg-indigo-700 transition-all duration-300 z-10"
+            className="fixed bottom-24 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#4e95d9] text-white rounded-full w-10 h-10 shadow-lg hover:bg-[#3d86ca] transition-all duration-300 z-10"
             aria-label="Scroll to bottom"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { User } from '../types';
-import { authService, chatService, extractErrorMessage } from '../services/api';
+import { authService, chatService } from '../services/api';
 import { jwtDecode } from 'jwt-decode';
 
 interface AuthContextType {

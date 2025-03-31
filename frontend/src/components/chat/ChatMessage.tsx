@@ -26,12 +26,12 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onRetry }) => {
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
       <div
-        className={`max-w-[85%] sm:max-w-[70%] rounded-lg px-3 py-2 ${
+        className={`max-w-[85%] sm:max-w-[70%] px-3 py-2 ${
           isUser
             ? hasError 
-              ? 'bg-red-500 text-white rounded-tl-none' 
-              : 'bg-indigo-600 text-white rounded-tl-none'
-            : 'bg-gray-200 text-gray-800 rounded-tr-none'
+              ? 'bg-red-500 text-white rounded-tr-lg rounded-tl-lg rounded-br-lg' 
+              : 'bg-[#4e95d9] text-white rounded-tr-lg rounded-tl-lg rounded-br-lg'
+            : 'bg-gray-200 text-gray-800 rounded-tr-lg rounded-tl-lg rounded-bl-lg'
         }`}
       >
         {isUser ? (

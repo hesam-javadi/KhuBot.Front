@@ -13,11 +13,31 @@ interface LoginForm {
   password: string;
 }
 
+// Function to convert Gregorian year to Persian year
+const getPersianYear = (): string => {
+  const gregorianYear = new Date().getFullYear();
+  const persianYear = gregorianYear - 621; // Approximate conversion
+  
+  // Convert to Persian numerals
+  return persianYear.toString()
+    .replace(/0/g, '۰')
+    .replace(/1/g, '۱')
+    .replace(/2/g, '۲')
+    .replace(/3/g, '۳')
+    .replace(/4/g, '۴')
+    .replace(/5/g, '۵')
+    .replace(/6/g, '۶')
+    .replace(/7/g, '۷')
+    .replace(/8/g, '۸')
+    .replace(/9/g, '۹');
+};
+
 const Login: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<LoginForm>();
+  const persianYear = getPersianYear();
 
   const onSubmit = async (data: LoginForm) => {
     try {
@@ -111,7 +131,7 @@ const Login: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 shadow-sm"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-[#4e95d9] hover:bg-[#3d86ca] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4e95d9] disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 shadow-sm"
             >
               {isLoading ? (
                 <img src={loadingGif} alt="در حال ورود..." className="h-5 w-5" />
@@ -121,6 +141,13 @@ const Login: React.FC = () => {
             </button>
           </div>
         </form>
+        
+        {/* Copyright text */}
+        <div className="text-center mt-6">
+          <p className="text-xs text-gray-900 font-thin">
+            © {persianYear} طراحی و توسعه توسط حسام جوادی
+          </p>
+        </div>
       </div>
     </div>
   );

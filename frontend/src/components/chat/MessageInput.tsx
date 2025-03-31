@@ -39,7 +39,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ onMessageSent }) => {
         <button
           type="submit"
           disabled={isTyping || !message.trim()}
-          className="inline-flex items-center justify-center rounded-lg bg-indigo-600 p-2 sm:px-4 sm:py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
+          className="inline-flex items-center justify-center rounded-lg bg-[#4e95d9] p-2 sm:px-4 sm:py-2 text-white hover:bg-[#3d86ca] focus:outline-none focus:ring-2 focus:ring-[#4e95d9] focus:ring-offset-2 disabled:opacity-50"
         >
           {isTyping ? (
             <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
