@@ -209,8 +209,8 @@ const ChatPage: React.FC = () => {
       </header>
 
       {/* Main Content - with padding to account for fixed header */}
-      <div className="flex-1 overflow-y-auto scrollbar-right pt-16" onScroll={handleScroll} ref={messagesContainerRef}>
-        <div className="max-w-[780px] mx-auto pb-20">
+      <div className="flex-1 overflow-y-auto scrollbar-right pt-16 pb-[72px] sm:pb-[88px]" onScroll={handleScroll} ref={messagesContainerRef}>
+        <div className="max-w-[780px] mx-auto">
           {messages.length === 0 ? (
             <div className="flex-1 h-[calc(100vh-180px)] flex items-center justify-center text-gray-500 text-lg sm:text-xl">
               <div className="text-center px-2">
@@ -242,11 +242,11 @@ const ChatPage: React.FC = () => {
           )}
         </div>
 
-        {/* Scroll to bottom button */}
+        {/* Scroll to bottom button - adjust position for larger textarea */}
         {showScrollButton && (
           <button 
             onClick={scrollToBottom}
-            className="fixed bottom-24 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#4e95d9] text-white rounded-full w-10 h-10 shadow-lg hover:bg-[#3d86ca] transition-all duration-300 z-10"
+            className="fixed bottom-[100px] left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-[#4e95d9] text-white rounded-full w-10 h-10 shadow-lg hover:bg-[#3d86ca] transition-all duration-300 z-10"
             aria-label="Scroll to bottom"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

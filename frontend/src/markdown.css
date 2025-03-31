@@ -116,4 +116,9 @@
 
 .markdown-content li + li {
   margin-top: 0.25em;
+}
+
+/* Ensure whitespace preservation in chat messages */
+.whitespace-pre-line {
+  white-space: pre-line;
 } 

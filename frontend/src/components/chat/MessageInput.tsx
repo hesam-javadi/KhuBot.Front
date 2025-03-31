@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, KeyboardEvent, useRef, useEffect } from 'react';
 import { IoSend } from 'react-icons/io5';
 
 interface MessageInputProps {
@@ -8,6 +8,18 @@ interface MessageInputProps {
 const MessageInput: React.FC<MessageInputProps> = ({ onMessageSent }) => {
   const [message, setMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Auto-resize the textarea as content changes
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    
+    // Reset height to auto to get the correct scrollHeight
+    textarea.style.height = 'auto';
+    // Set the height to scrollHeight to fit the content
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 150)}px`;
+  }, [message]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,16 +37,32 @@ const MessageInput: React.FC<MessageInputProps> = ({ onMessageSent }) => {
     }
   };
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (message.trim()) {
+        handleSubmit(e as unknown as React.FormEvent);
+      }
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit} className="border-t border-gray-200 p-2 sm:p-4">
       <div className="flex items-center">
-        <input
-          type="text"
+        <textarea
+          ref={textareaRef}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="پیام خود را بنویسید..."
-          className="flex-1 rounded-lg border border-gray-300 px-2 sm:px-4 py-2 bg-white focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ml-1 sm:ml-4"
+          onKeyDown={handleKeyDown}
+          placeholder="پیام خود را بنویسید... (Shift+Enter برای خط جدید)"
+          className="flex-1 rounded-lg border border-gray-300 px-2 sm:px-4 py-2 bg-white focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 text-sm ml-1 sm:ml-4 resize-none min-h-[40px] max-h-[150px] scrollbar-hide"
           disabled={isTyping}
+          rows={1}
+          style={{ 
+            scrollbarWidth: 'none', /* Firefox */
+            msOverflowStyle: 'none', /* IE and Edge */
+            overflowY: 'auto'
+          }}
         />
         <button
           type="submit"

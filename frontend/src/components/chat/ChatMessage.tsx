@@ -23,6 +23,16 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onRetry }) => {
     });
   }, [message.content]);
 
+  // Function to convert newlines to breaks in user messages
+  const formatUserMessage = (content: string) => {
+    return content.split('\n').map((line, i) => (
+      <React.Fragment key={i}>
+        {line}
+        {i < content.split('\n').length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
       <div
@@ -35,12 +45,14 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onRetry }) => {
         }`}
       >
         {isUser ? (
-          <div className="flex items-center">
-            <p className="text-sm break-words">{message.content}</p>
+          <div className="flex items-start">
+            <p className="text-sm break-words whitespace-pre-line">
+              {formatUserMessage(message.content)}
+            </p>
             {hasError && onRetry && (
               <button 
                 onClick={() => onRetry(message.id)}
-                className="mr-2 p-1 rounded-full bg-white text-red-500 hover:bg-gray-100 transition-colors duration-200"
+                className="mr-2 mt-0.5 p-1 rounded-full bg-white text-red-500 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0"
                 title="ارسال مجدد"
               >
                 <IoRefreshOutline size={18} />
