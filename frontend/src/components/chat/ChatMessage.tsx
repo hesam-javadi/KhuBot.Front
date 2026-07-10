@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
-import hljs from 'highlight.js';
-import { IoRefreshOutline } from 'react-icons/io5';
-import { ChatMessage as ChatMessageType } from '../../types';
+import React, { useEffect } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
+import hljs from "highlight.js";
+import { IoRefreshOutline } from "react-icons/io5";
+import { ChatMessage as ChatMessageType } from "../../types";
 
 interface ChatMessageProps {
   message: ChatMessageType;
@@ -17,51 +17,51 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onRetry }) => {
   const hasError = message.hasError || false;
 
   useEffect(() => {
-    // Apply syntax highlighting to code blocks
-    document.querySelectorAll('pre code').forEach((block) => {
+    document.querySelectorAll("pre code").forEach((block) => {
       hljs.highlightElement(block as HTMLElement);
     });
   }, [message.content]);
 
-  // Function to convert newlines to breaks in user messages
-  const formatUserMessage = (content: string) => {
-    return content.split('\n').map((line, i) => (
+  const formatUserMessage = (content: string) =>
+    content.split("\n").map((line, i, arr) => (
       <React.Fragment key={i}>
         {line}
-        {i < content.split('\n').length - 1 && <br />}
+        {i < arr.length - 1 && <br />}
       </React.Fragment>
     ));
-  };
 
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-3`}>
       <div
-        className={`max-w-[85%] sm:max-w-[70%] px-3 py-2 ${
-          isUser
-            ? hasError 
-              ? 'bg-red-500 text-white rounded-tr-lg rounded-tl-lg rounded-br-lg' 
-              : 'bg-[#4e95d9] text-white rounded-tr-lg rounded-tl-lg rounded-br-lg'
-            : 'bg-gray-200 text-gray-800 rounded-tr-lg rounded-tl-lg rounded-bl-lg'
-        }`}
+        className={`
+          max-w-[85%] sm:max-w-[70%] px-4 py-2.5 text-sm
+          ${
+            isUser
+              ? hasError
+                ? "bg-gradient-to-br from-red-500 to-red-600 text-white rounded-2xl rounded-br-sm shadow-md shadow-red-200"
+                : "bg-gradient-to-br from-indigo-500 to-blue-500 text-white rounded-2xl rounded-br-sm shadow-md shadow-indigo-200"
+              : "bg-white text-gray-800 rounded-2xl rounded-bl-sm shadow-md shadow-gray-200/80 ring-1 ring-gray-100"
+          }
+        `}
       >
         {isUser ? (
-          <div className="flex items-start">
-            <p className="text-sm break-words whitespace-pre-line">
+          <div className="flex items-start gap-2">
+            <p className="break-words whitespace-pre-line leading-relaxed">
               {formatUserMessage(message.content)}
             </p>
             {hasError && onRetry && (
-              <button 
+              <button
                 onClick={() => onRetry(message.id)}
-                className="mr-2 mt-0.5 p-1 rounded-full bg-white text-red-500 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0"
+                className="mt-0.5 p-1 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
                 title="ارسال مجدد"
               >
-                <IoRefreshOutline size={18} />
+                <IoRefreshOutline size={16} />
               </button>
             )}
           </div>
         ) : (
-          <div className="text-sm markdown-content break-words">
-            <ReactMarkdown 
+          <div className="markdown-content break-words leading-relaxed">
+            <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw, rehypeSanitize]}
             >
@@ -74,4 +74,4 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, onRetry }) => {
   );
 };
 
-export default ChatMessage; 
+export default ChatMessage;

@@ -4,109 +4,115 @@
 
 /* Font face declarations for IranSansX */
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Regular.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Regular.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Regular.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Regular.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Bold.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Bold.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Bold.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Bold.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Medium.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Medium.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Medium.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Medium.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Light.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Light.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Light.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Light.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Black.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Black.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Black.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Black.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-ExtraBold.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-ExtraBold.woff') format('woff'),
-       url('./assets/fonts/IranSansX-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-ExtraBold.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-ExtraBold.woff") format("woff"),
+        url("./assets/fonts/IranSansX-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-DemiBold.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-DemiBold.woff') format('woff'),
-       url('./assets/fonts/IranSansX-DemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-DemiBold.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-DemiBold.woff") format("woff"),
+        url("./assets/fonts/IranSansX-DemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-Thin.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-Thin.woff') format('woff'),
-       url('./assets/fonts/IranSansX-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-Thin.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-Thin.woff") format("woff"),
+        url("./assets/fonts/IranSansX-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'IranSansX';
-  src: url('./assets/fonts/IranSansX-UltraLight.woff2') format('woff2'),
-       url('./assets/fonts/IranSansX-UltraLight.woff') format('woff'),
-       url('./assets/fonts/IranSansX-UltraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+    font-family: "IranSansX";
+    src:
+        url("./assets/fonts/IranSansX-UltraLight.woff2") format("woff2"),
+        url("./assets/fonts/IranSansX-UltraLight.woff") format("woff"),
+        url("./assets/fonts/IranSansX-UltraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Custom styles should come after Tailwind directives */
 :root {
-  font-family: 'IranSansX', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "IranSansX", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light;
+    color: #1e1b4b;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Comment out or remove CSS rules that might override Tailwind */
@@ -155,86 +161,103 @@ button:focus-visible {
 
 /* Keep these styles */
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  direction: rtl;
-  font-family: 'IranSansX', sans-serif;
-}
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    direction: rtl;
+    font-family: "IranSansX", sans-serif;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+    /* Aurora mesh background — fixed so it never scrolls */
+    background-color: #eef2ff;
+    background-image:
+        radial-gradient(
+            ellipse at 15% 50%,
+            rgba(167, 139, 250, 0.3) 0%,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 85% 15%,
+            rgba(99, 102, 241, 0.35) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 70% 88%,
+            rgba(20, 184, 166, 0.22) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 5% 85%,
+            rgba(244, 114, 182, 0.2) 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(139, 92, 246, 0.12) 0%,
+            transparent 70%
+        );
+    background-attachment: fixed;
 }
 
 /* RTL-specific styles */
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
+    --tw-space-x-reverse: 1;
 }
 
 .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
+    --tw-space-x-reverse: 1;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
+    background: rgba(99, 102, 241, 0.25);
+    border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: rgba(99, 102, 241, 0.45);
 }
 
 /* Custom styles for autofill inputs */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset !important;
-  -webkit-text-fill-color: #1F2937 !important;
-  caret-color: #4F46E5 !important;
-  transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #1f2937 !important;
+    caret-color: #4f46e5 !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Force scrollbar on the right side */
 html {
-  direction: ltr;
+    direction: ltr;
 }
 
 body {
-  direction: rtl;
+    direction: rtl;
 }
 
 .scrollbar-right {
-  direction: ltr;
+    direction: ltr;
 }
 .scrollbar-right > * {
-  direction: rtl;
+    direction: rtl;
 }
 
 /* Hide scrollbar but maintain scrollability */
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
